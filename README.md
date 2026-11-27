@@ -50,6 +50,6 @@ El blueprint `render.yaml` crea el servicio Django/Gunicorn. Configura `DATABASE
 
 ### Frontend estático en Vercel
 
-Importa este repositorio en Vercel y configura `VITE_API_URL` como la URL pública base del backend, incluyendo `/api/` al final (por ejemplo, `https://<backend>.onrender.com/api/`). El `vercel.json` genera el archivo de configuración y publica `frontend/` como contenido estático. El dominio del frontend debe estar incluido en `CORS_ALLOWED_ORIGINS` del backend.
+Importa este repositorio en Vercel manteniendo `Root Directory` en `./` (raíz del repositorio): `vercel.json` ejecuta la construcción dentro de `frontend/` y publica esa carpeta como contenido estático. Configura `VITE_API_URL` como la URL pública base del backend, incluyendo `/api/` al final (por ejemplo, `https://<backend>.onrender.com/api/`). El dominio del frontend debe estar incluido en `CORS_ALLOWED_ORIGINS` del backend.
 
-La URL pública y las capturas del despliegue deben completarse después de que los servicios se hayan creado y verificado.
+En este despliegue, el backend está en <https://labapirest.onrender.com> y el frontend en <https://lab8-integrado.vercel.app>. Se verificó que `GET /api/libros/` responde correctamente y que la interfaz muestra los registros recibidos desde la API.
