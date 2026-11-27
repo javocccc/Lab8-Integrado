@@ -46,7 +46,7 @@ Las pruebas del frontend usan el runner integrado `node:test`, ya que la aplicac
 
 ### Backend en Render
 
-El blueprint `render.yaml` crea el servicio Django/Gunicorn y PostgreSQL. Configura los orígenes exactos del frontend en `CORS_ALLOWED_ORIGINS` y `CSRF_TRUSTED_ORIGINS` cuando Render los solicite.
+El blueprint `render.yaml` crea el servicio Django/Gunicorn. Configura `DATABASE_URL` con la URL de conexión de PostgreSQL, además de los orígenes exactos del frontend en `CORS_ALLOWED_ORIGINS` y `CSRF_TRUSTED_ORIGINS`. Mantén las credenciales de la base de datos solo como variables de entorno de Render; no las agregues al repositorio.
 
 ### Frontend estático en Vercel
 
